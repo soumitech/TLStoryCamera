@@ -182,7 +182,7 @@ public class TLStoryViewController: UIViewController {
             authorizedVC.view.frame = self.view.bounds
             authorizedVC.delegate = self
             self.view.addSubview(authorizedVC.view)
-            self.addChildViewController(authorizedVC)
+            self.addChild(authorizedVC)
         }
     }
     
@@ -357,7 +357,7 @@ extension TLStoryViewController: TLStoryOverlayImagePickerDelegate {
 }
 
 extension TLStoryViewController: TLStoryEditContainerViewDelegate {
-    internal func storyEditSwpieFilter(direction: UISwipeGestureRecognizerDirection) {
+    internal func storyEditSwpieFilter(direction: UISwipeGestureRecognizer.Direction) {
         self.outputView?.switchFilter(direction: direction);
     }
     

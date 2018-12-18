@@ -32,7 +32,7 @@ class TLAuthorizedManager: NSObject {
     
     public static func checkAuthorization(with type:AuthorizedType) -> Bool {
         if type == .mic {
-            return AVAudioSession.sharedInstance().recordPermission() == .granted
+            return AVAudioSession.sharedInstance().recordPermission == .granted
         }
         if type == .camera {
             return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized
@@ -45,14 +45,14 @@ class TLAuthorizedManager: NSObject {
     
     public static func openAuthorizationSetting() {
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL.init(string: UIApplication.openSettingsURLString)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(URL.init(string: UIApplicationOpenSettingsURLString)!)
+            UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
         }
     }
     
     fileprivate static func requestMicAuthorizationStatus(_ callabck:@escaping AuthorizedCallback) {
-        let status = AVAudioSession.sharedInstance().recordPermission()
+        let status = AVAudioSession.sharedInstance().recordPermission
         if status == .granted {
             DispatchQueue.main.async {
                 callabck(.mic, true)
@@ -110,4 +110,9 @@ class TLAuthorizedManager: NSObject {
             self.openAuthorizationSetting()
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

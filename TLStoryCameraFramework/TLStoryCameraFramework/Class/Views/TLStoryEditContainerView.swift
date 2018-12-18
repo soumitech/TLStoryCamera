@@ -14,7 +14,7 @@ protocol TLStoryEditContainerViewDelegate: NSObjectProtocol{
     func storyEditContainerTextStickerBeEditing(sticker:TLStoryTextSticker)
     func storyEditContainerSwipeUp()
     func storyEditContainerTap()
-    func storyEditSwpieFilter(direction:UISwipeGestureRecognizerDirection)
+    func storyEditSwpieFilter(direction:UISwipeGestureRecognizer.Direction)
 }
 
 class TLStoryEditContainerView: UIView {
@@ -27,7 +27,7 @@ class TLStoryEditContainerView: UIView {
     fileprivate var colorPicker:TLStoryColorPickerView?
     
     fileprivate var confrimBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.setTitle("确定", for: .normal)
         btn.showsTouchWhenHighlighted = true
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
@@ -35,7 +35,7 @@ class TLStoryEditContainerView: UIView {
     }()
     
     fileprivate var undoBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_drawing_cancel"), for: .normal)
         return btn

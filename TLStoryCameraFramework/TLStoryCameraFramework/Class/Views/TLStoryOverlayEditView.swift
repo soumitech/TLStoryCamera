@@ -32,7 +32,7 @@ class TLStoryOverlayEditView: UIView {
     fileprivate var bottomGradientView:TLStoryFullScreenDarkGradientView?
     
     fileprivate lazy var closeBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_icon_close"), for: .normal)
         btn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
@@ -40,7 +40,7 @@ class TLStoryOverlayEditView: UIView {
     }()
     
     fileprivate lazy var doodleBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_drawing_tool"), for: .normal)
         btn.addTarget(self, action: #selector(doodleAction), for: .touchUpInside)
@@ -48,7 +48,7 @@ class TLStoryOverlayEditView: UIView {
     }()
     
     fileprivate lazy var tagsBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_tags"), for: .normal)
         btn.addTarget(self, action: #selector(addTagsAction), for: .touchUpInside)
@@ -56,7 +56,7 @@ class TLStoryOverlayEditView: UIView {
     }()
     
     fileprivate lazy var textBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_text"), for: .normal)
         btn.addTarget(self, action: #selector(addTextAction), for: .touchUpInside)
@@ -64,7 +64,7 @@ class TLStoryOverlayEditView: UIView {
     }()
     
     fileprivate lazy var audioEnableBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_voice_on"), for: .normal)
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_voice_off"), for: .selected)
@@ -73,7 +73,7 @@ class TLStoryOverlayEditView: UIView {
     }()
     
     fileprivate lazy var saveBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_download"), for: .normal)
         btn.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
@@ -81,7 +81,7 @@ class TLStoryOverlayEditView: UIView {
     }()
         
     fileprivate lazy var publishBtn:UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_publish"), for: .normal)
         btn.addTarget(self, action: #selector(publishAction), for: .touchUpInside)
         return btn

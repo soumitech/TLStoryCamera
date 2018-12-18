@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+
+use_frameworks!
+
+project 'TLStoryCameraFramework.xcodeproj'
+
+target :TLStoryCameraFramework do
+  pod 'GPUImage'
+  pod 'MBProgressHUD'
+end

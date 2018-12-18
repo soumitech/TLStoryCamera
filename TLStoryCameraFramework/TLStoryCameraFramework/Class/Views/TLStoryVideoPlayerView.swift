@@ -47,14 +47,14 @@ class TLStoryVideoPlayerView: UIView {
         theAudioPlayer = AVPlayer.init(url: url)
         
         gpuView = GPUImageView.init(frame: self.bounds)
-        gpuView?.fillMode = .preserveAspectRatio
+        gpuView?.fillMode = kGPUImageFillModePreserveAspectRatio
         self.addSubview(gpuView!)
         
         initImageMovie()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name:NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name:UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     @objc fileprivate func didBecomeActive() {
@@ -78,7 +78,7 @@ class TLStoryVideoPlayerView: UIView {
         gpuMovie!.playAtActualSpeed = true
         gpuMovie!.startProcessingCallback = { [weak self] in
             if let strongSelf = self {
-                strongSelf.theAudioPlayer!.seek(to: kCMTimeZero)
+                strongSelf.theAudioPlayer!.seek(to: CMTime.zero)
                 strongSelf.theAudioPlayer!.play()
             }
         }

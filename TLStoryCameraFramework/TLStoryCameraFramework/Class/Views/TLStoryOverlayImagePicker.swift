@@ -50,7 +50,7 @@ class TLStoryOverlayImagePicker: UIView {
     
     public func display() {
         self.isHidden = false
-        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.25, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.imagePicker!.y = self.height - 380
         }, completion: nil);
     }
@@ -147,7 +147,7 @@ class TLStoryImagePickerView: UIView {
             let maskPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: [.topLeft,.topRight], cornerRadii: CGSize.init(width: 10, height: 10))
             let maskLayer = CAShapeLayer()
             maskLayer.path = maskPath.cgPath
-            maskLayer.fillRule = kCAFillRuleEvenOdd
+            maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
             
             let maskView = UIView(frame: self.bounds)
             maskView.backgroundColor = UIColor.black

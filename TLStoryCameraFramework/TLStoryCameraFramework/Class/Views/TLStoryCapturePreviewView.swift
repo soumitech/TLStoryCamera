@@ -37,7 +37,7 @@ class TLStoryCapturePreviewView: GPUImageView {
         zoomAnim.fromValue = 1.8
         zoomAnim.byValue = 0.8
         zoomAnim.toValue = 1
-        zoomAnim.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        zoomAnim.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
         let alphaAnim = CABasicAnimation.init(keyPath: "opacity")
         alphaAnim.fromValue = 1
@@ -47,7 +47,7 @@ class TLStoryCapturePreviewView: GPUImageView {
         group.animations = [zoomAnim,alphaAnim]
         group.duration = 0.3
         group.isRemovedOnCompletion = false
-        group.fillMode = kCAFillModeForwards
+        group.fillMode = CAMediaTimingFillMode.forwards
         return group
     }()
     

@@ -28,7 +28,7 @@ class TLStoryAuthorizationController: UIViewController {
     }()
     
     fileprivate var openCameraBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.setTitle("启用相机访问权限", for: .normal)
         btn.setTitle("相机访问权限已启用", for: .selected)
         btn.setTitleColor(UIColor.init(colorHex: 0x4797e1, alpha: 1), for: .normal)
@@ -38,7 +38,7 @@ class TLStoryAuthorizationController: UIViewController {
     }()
     
     fileprivate var openMicBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.setTitle("启用麦克风访问权限", for: .normal)
         btn.setTitle("麦克风访问权限已启用", for: .selected)
         btn.setTitleColor(UIColor.init(colorHex: 0x4797e1, alpha: 1), for: .normal)
@@ -108,7 +108,7 @@ class TLStoryAuthorizationController: UIViewController {
                 self.view.alpha = 0
             }, completion: { (x) in
                 self.view.removeFromSuperview()
-                self.removeFromParentViewController()
+                self.removeFromParent()
                 self.delegate?.requestAllAuthorizeSuccess()
             })
         }

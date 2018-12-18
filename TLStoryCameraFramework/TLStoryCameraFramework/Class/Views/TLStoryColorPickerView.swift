@@ -39,7 +39,7 @@ class TLStoryColorPickerView: UIView {
     }()
     
     fileprivate var sliderBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_drawing_tool_size"), for: .normal)
         btn.backgroundColor = UIColor.white
         btn.layer.cornerRadius = 15

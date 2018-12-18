@@ -107,21 +107,21 @@ class TLStorySliderView: UIView {
         pathAnim.fromValue = isBegin ? path.cgPath : toPath.cgPath
         pathAnim.toValue = isBegin ? toPath.cgPath : path.cgPath
         pathAnim.beginTime = 0
-        pathAnim.fillMode = kCAFillModeBoth
+        pathAnim.fillMode = CAMediaTimingFillMode.both
         pathAnim.isRemovedOnCompletion = false
         
         let alphaAnim = CABasicAnimation.init(keyPath: "opacity")
         alphaAnim.fromValue = isBegin ? 0.3 : 0.5
         alphaAnim.toValue = isBegin ? 0.5 : 0.3
         alphaAnim.beginTime = 0
-        alphaAnim.fillMode = kCAFillModeBoth
+        alphaAnim.fillMode = CAMediaTimingFillMode.both
         alphaAnim.isRemovedOnCompletion = false
         
         let groupAnim = CAAnimationGroup.init()
         groupAnim.animations = [pathAnim,alphaAnim]
         groupAnim.autoreverses = autoreverses
         groupAnim.duration = 0.3
-        groupAnim.fillMode = kCAFillModeBoth
+        groupAnim.fillMode = CAMediaTimingFillMode.both
         groupAnim.isRemovedOnCompletion = false
         groupAnim.delegate = self
         

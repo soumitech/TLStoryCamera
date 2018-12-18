@@ -60,7 +60,7 @@ class TLStoryOverlayOutputView: UIView {
         }
     }
     
-    public func switchFilter(direction:UISwipeGestureRecognizerDirection) {
+    public func switchFilter(direction:UISwipeGestureRecognizer.Direction) {
         if direction == .left {
             filterIndex += 1
         }

@@ -24,7 +24,7 @@ class TLStoryOverlayControlView: UIView {
     fileprivate lazy var cameraBtn = TLStoryCameraButton.init(frame: CGRect.init(x: 0, y: 0, width: 80, height: 80))
     
     fileprivate lazy var flashBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_flashlight_auto"), for: .normal)
         btn.addTarget(self, action: #selector(flashAction), for: .touchUpInside)
@@ -32,7 +32,7 @@ class TLStoryOverlayControlView: UIView {
     }()
     
     fileprivate lazy var switchBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_cam_turn"), for: .normal)
         btn.addTarget(self, action: #selector(switchAction), for: .touchUpInside)
@@ -40,7 +40,7 @@ class TLStoryOverlayControlView: UIView {
     }()
     
     fileprivate lazy var closeBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_icon_close"), for: .normal)
         btn.addTarget(self, action: #selector(closeAction), for: .touchUpInside)

@@ -117,7 +117,7 @@ extension TLStoryStickersView: TLStoryStickerDelegate {
     internal func stickerViewBecomeFirstRespond(sticker: UIView) {
         for v in stickers {
             if v == sticker {
-                self.bringSubview(toFront: v)
+                self.bringSubviewToFront(v)
                 break;
             }
         }

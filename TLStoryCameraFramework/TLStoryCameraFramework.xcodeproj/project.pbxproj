@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B58E8942028249A00C29299 /* TLStoryCameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4B58E8942028249A00C29299 /* TLStoryCameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8CC202824B700C29299 /* UIColor+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89D202824B700C29299 /* UIColor+TLStory.swift */; };
 		4B58E8CD202824B700C29299 /* UIImage+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89E202824B700C29299 /* UIImage+TLStory.swift */; };
 		4B58E8CE202824B700C29299 /* UIView+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89F202824B700C29299 /* UIView+TLStory.swift */; };
 		4B58E8CF202824B700C29299 /* JLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8A1202824B700C29299 /* JLHUD.swift */; };
 		4B58E8D0202824B700C29299 /* TLStoryTextLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8A3202824B700C29299 /* TLStoryTextLayoutManager.m */; };
-		4B58E8D1202824B700C29299 /* TLStoryTextLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8A4202824B700C29299 /* TLStoryTextLayoutManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4B58E8D1202824B700C29299 /* TLStoryTextLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8A4202824B700C29299 /* TLStoryTextLayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8D2202824B700C29299 /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8A6202824B700C29299 /* GPUImageBeautifyFilter.m */; };
 		4B58E8D3202824B700C29299 /* TLGPUImageAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8A7202824B700C29299 /* TLGPUImageAlphaBlendFilter.m */; };
 		4B58E8D4202824B700C29299 /* GPUImageCustomLookupFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8A8202824B700C29299 /* GPUImageCustomLookupFilter.swift */; };
-		4B58E8D5202824B700C29299 /* TLGPUImageAlphaBlendFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8A9202824B700C29299 /* TLGPUImageAlphaBlendFilter.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4B58E8D6202824B700C29299 /* GPUImageBeautifyFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8AA202824B700C29299 /* GPUImageBeautifyFilter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4B58E8D5202824B700C29299 /* TLGPUImageAlphaBlendFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8A9202824B700C29299 /* TLGPUImageAlphaBlendFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B58E8D6202824B700C29299 /* GPUImageBeautifyFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8AA202824B700C29299 /* GPUImageBeautifyFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8D7202824B700C29299 /* TLGPUImageMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8AC202824B700C29299 /* TLGPUImageMovie.m */; };
-		4B58E8D8202824B700C29299 /* TLGPUImageMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8AD202824B700C29299 /* TLGPUImageMovie.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4B58E8D8202824B700C29299 /* TLGPUImageMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8AD202824B700C29299 /* TLGPUImageMovie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8D9202824B700C29299 /* TLStoryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8AF202824B700C29299 /* TLStoryConfiguration.swift */; };
 		4B58E8DA202824B700C29299 /* TLStoryOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8B0202824B700C29299 /* TLStoryOutput.swift */; };
 		4B58E8DB202824B700C29299 /* TLAuthorizedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8B1202824B700C29299 /* TLAuthorizedManager.swift */; };
@@ -44,31 +44,11 @@
 		4B58E8F0202824B700C29299 /* TLStoryCapturePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8C9202824B700C29299 /* TLStoryCapturePreviewView.swift */; };
 		4B58E8F1202824B700C29299 /* TLStoryBottomImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8CA202824B700C29299 /* TLStoryBottomImagePickerView.swift */; };
 		4B58E8F2202824B700C29299 /* TLStoryOverlayEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E8CB202824B700C29299 /* TLStoryOverlayEditView.swift */; };
-		4B58E8F72028254800C29299 /* TLStoryConfiguration.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8AF202824B700C29299 /* TLStoryConfiguration.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B58E8F82028254E00C29299 /* TLStoryViewController.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8B8202824B700C29299 /* TLStoryViewController.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B595E862031844D00DCCE67 /* TLGPUImageMovieFillFiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B595E842031844D00DCCE67 /* TLGPUImageMovieFillFiter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4B595E862031844D00DCCE67 /* TLGPUImageMovieFillFiter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B595E842031844D00DCCE67 /* TLGPUImageMovieFillFiter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B595E872031844D00DCCE67 /* TLGPUImageMovieFillFiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B595E852031844D00DCCE67 /* TLGPUImageMovieFillFiter.m */; };
 		4B828445202AAB820073749B /* UIDevice+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B828444202AAB820073749B /* UIDevice+TLStory.swift */; };
-		4B9CF3AC202C2F5E00ABAD66 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9CF3AA202C2F4F00ABAD66 /* GPUImage.framework */; };
-		4B9CF3BB202C31B200ABAD66 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9CF3B8202C318300ABAD66 /* MBProgressHUD.framework */; };
+		F22303B5EA38D198404AE92A /* Pods_TLStoryCameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9D4F20F6A6CC8B60C96316 /* Pods_TLStoryCameraFramework.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4B9CF3A9202C2F4F00ABAD66 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4B9CF3A1202C2F4E00ABAD66 /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCE209E51943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
-		4B9CF3B7202C318300ABAD66 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4B9CF3AF202C318300ABAD66 /* MBProgressHUD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D104D7A1ACA36CC00973364;
-			remoteInfo = "MBProgressHUD Framework";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4B89DDAB202838A80035573C /* CopyFiles */ = {
@@ -125,8 +105,9 @@
 		4B595E842031844D00DCCE67 /* TLGPUImageMovieFillFiter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLGPUImageMovieFillFiter.h; sourceTree = "<group>"; };
 		4B595E852031844D00DCCE67 /* TLGPUImageMovieFillFiter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLGPUImageMovieFillFiter.m; sourceTree = "<group>"; };
 		4B828444202AAB820073749B /* UIDevice+TLStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+TLStory.swift"; sourceTree = "<group>"; };
-		4B9CF3A1202C2F4E00ABAD66 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = TLStoryCameraFramework/GPUImageFramework/GPUImage.xcodeproj; sourceTree = "<group>"; };
-		4B9CF3AF202C318300ABAD66 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = TLStoryCameraFramework/MBProgressHUDFramework/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		6B9D4F20F6A6CC8B60C96316 /* Pods_TLStoryCameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TLStoryCameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7464B6844A6D1FBB5839649E /* Pods-TLStoryCameraFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLStoryCameraFramework.debug.xcconfig"; path = "Target Support Files/Pods-TLStoryCameraFramework/Pods-TLStoryCameraFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		78D997D80CB88CCD23990EC3 /* Pods-TLStoryCameraFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLStoryCameraFramework.release.xcconfig"; path = "Target Support Files/Pods-TLStoryCameraFramework/Pods-TLStoryCameraFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,22 +115,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B9CF3BB202C31B200ABAD66 /* MBProgressHUD.framework in Frameworks */,
-				4B9CF3AC202C2F5E00ABAD66 /* GPUImage.framework in Frameworks */,
+				F22303B5EA38D198404AE92A /* Pods_TLStoryCameraFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050B7F3EE350EB9E90E0EC0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7464B6844A6D1FBB5839649E /* Pods-TLStoryCameraFramework.debug.xcconfig */,
+				78D997D80CB88CCD23990EC3 /* Pods-TLStoryCameraFramework.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4B58E8852028249A00C29299 = {
 			isa = PBXGroup;
 			children = (
-				4B9CF3AF202C318300ABAD66 /* MBProgressHUD.xcodeproj */,
-				4B9CF3A1202C2F4E00ABAD66 /* GPUImage.xcodeproj */,
 				4B58E8912028249A00C29299 /* TLStoryCameraFramework */,
 				4B58E8902028249A00C29299 /* Products */,
 				4B9CF3AB202C2F5E00ABAD66 /* Frameworks */,
+				050B7F3EE350EB9E90E0EC0E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,27 +277,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4B9CF3A2202C2F4E00ABAD66 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B9CF3AA202C2F4F00ABAD66 /* GPUImage.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4B9CF3AB202C2F5E00ABAD66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B9D4F20F6A6CC8B60C96316 /* Pods_TLStoryCameraFramework.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4B9CF3B0202C318300ABAD66 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B9CF3B8202C318300ABAD66 /* MBProgressHUD.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,14 +292,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B58E8F82028254E00C29299 /* TLStoryViewController.swift in Headers */,
-				4B58E8F72028254800C29299 /* TLStoryConfiguration.swift in Headers */,
 				4B58E8942028249A00C29299 /* TLStoryCameraFramework.h in Headers */,
-				4B58E8D8202824B700C29299 /* TLGPUImageMovie.h in Headers */,
-				4B58E8D6202824B700C29299 /* GPUImageBeautifyFilter.h in Headers */,
-				4B58E8D1202824B700C29299 /* TLStoryTextLayoutManager.h in Headers */,
 				4B595E862031844D00DCCE67 /* TLGPUImageMovieFillFiter.h in Headers */,
 				4B58E8D5202824B700C29299 /* TLGPUImageAlphaBlendFilter.h in Headers */,
+				4B58E8D1202824B700C29299 /* TLStoryTextLayoutManager.h in Headers */,
+				4B58E8D8202824B700C29299 /* TLGPUImageMovie.h in Headers */,
+				4B58E8D6202824B700C29299 /* GPUImageBeautifyFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +308,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B58E8972028249A00C29299 /* Build configuration list for PBXNativeTarget "TLStoryCameraFramework" */;
 			buildPhases = (
+				AF0D3DEAB0F0A8AAB516A276 /* [CP] Check Pods Manifest.lock */,
 				4B58E88A2028249A00C29299 /* Sources */,
 				4B58E88B2028249A00C29299 /* Frameworks */,
 				4B58E88C2028249A00C29299 /* Headers */,
@@ -358,11 +330,12 @@
 		4B58E8862028249A00C29299 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = com.garry;
 				TargetAttributes = {
 					4B58E88E2028249A00C29299 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -377,39 +350,12 @@
 			mainGroup = 4B58E8852028249A00C29299;
 			productRefGroup = 4B58E8902028249A00C29299 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4B9CF3A2202C2F4E00ABAD66 /* Products */;
-					ProjectRef = 4B9CF3A1202C2F4E00ABAD66 /* GPUImage.xcodeproj */;
-				},
-				{
-					ProductGroup = 4B9CF3B0202C318300ABAD66 /* Products */;
-					ProjectRef = 4B9CF3AF202C318300ABAD66 /* MBProgressHUD.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4B58E88E2028249A00C29299 /* TLStoryCameraFramework */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4B9CF3AA202C2F4F00ABAD66 /* GPUImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GPUImage.framework;
-			remoteRef = 4B9CF3A9202C2F4F00ABAD66 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4B9CF3B8202C318300ABAD66 /* MBProgressHUD.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MBProgressHUD.framework;
-			remoteRef = 4B9CF3B7202C318300ABAD66 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4B58E88D2028249A00C29299 /* Resources */ = {
@@ -420,6 +366,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF0D3DEAB0F0A8AAB516A276 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TLStoryCameraFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B58E88A2028249A00C29299 /* Sources */ = {
@@ -480,6 +451,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -487,6 +459,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -540,6 +513,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -547,6 +521,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -581,15 +556,17 @@
 		};
 		4B58E8982028249A00C29299 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7464B6844A6D1FBB5839649E /* Pods-TLStoryCameraFramework.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TLStoryCameraFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -598,22 +575,25 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.garry.TLStoryCameraFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		4B58E8992028249A00C29299 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D997D80CB88CCD23990EC3 /* Pods-TLStoryCameraFramework.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TLStoryCameraFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -622,7 +602,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.garry.TLStoryCameraFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

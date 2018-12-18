@@ -46,8 +46,8 @@ class TLStoryCameraButton: UIControl {
         proLayer.lineWidth = 3
         proLayer.strokeColor = UIColor.init(colorHex: 0x0056ff).cgColor
         proLayer.fillColor = UIColor.clear.cgColor
-        proLayer.lineJoin = kCALineJoinRound
-        proLayer.lineCap = kCALineCapRound
+        proLayer.lineJoin = CAShapeLayerLineJoin.round
+        proLayer.lineCap = CAShapeLayerLineCap.round
         return proLayer
     }()
     
@@ -153,7 +153,7 @@ class TLStoryCameraButton: UIControl {
     fileprivate func startTimer() {
         timer?.invalidate()
         timer = CADisplayLink.init(target: self, selector: #selector(countDownd))
-        timer?.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        timer?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
     
     fileprivate func stopTimer() {
@@ -196,7 +196,7 @@ class TLStoryCameraButton: UIControl {
         insideCircleGroupAnim.animations = [insideCircleAlphaAnim,insideCircleScaleAnim]
         insideCircleGroupAnim.duration = 0.35
         insideCircleGroupAnim.isRemovedOnCompletion = false
-        insideCircleGroupAnim.fillMode = kCAFillModeBoth
+        insideCircleGroupAnim.fillMode = CAMediaTimingFillMode.both
         insideCircleGroupAnim.delegate = self
         
         insideCircleView.layer.add(insideCircleGroupAnim, forKey: "insideCircleAnim")
@@ -204,7 +204,7 @@ class TLStoryCameraButton: UIControl {
         let anim = CABasicAnimation.init(keyPath: "transform.scale")
         anim.fromValue = 1
         anim.toValue = 1.5
-        anim.fillMode = kCAFillModeBoth
+        anim.fillMode = CAMediaTimingFillMode.both
         anim.isRemovedOnCompletion = false
         anim.duration = 0.35
         anim.delegate = self

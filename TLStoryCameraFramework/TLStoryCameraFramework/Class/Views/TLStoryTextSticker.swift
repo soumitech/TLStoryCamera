@@ -87,7 +87,7 @@ class TLStoryTextSticker: UIView, TLStoryStickerProtocol {
         textview.backgroundColor = UIColor.clear
         textview.textAlignment = .center
         textview.layoutManager.allowsNonContiguousLayout = false
-        textview.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        textview.textContainerInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         textview.autocorrectionType = .no
         textview.showsVerticalScrollIndicator = false
         return textview

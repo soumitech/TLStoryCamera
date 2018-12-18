@@ -40,11 +40,11 @@ class FirstViewController: UIViewController {
         storyVc.view.frame = CGRect.init(x: 0, y: self.isX() ? -88 : -44, width: screenWidth, height: screenHeight)
         storyVc.delegate = self
         scrollView.addSubview(storyVc.view)
-        self.addChildViewController(storyVc)
+        self.addChild(storyVc)
         
         pageVc.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight)
         scrollView.addSubview(pageVc.view)
-        self.addChildViewController(pageVc)
+        self.addChild(pageVc)
         
         self.view.addSubview(scrollView)
         

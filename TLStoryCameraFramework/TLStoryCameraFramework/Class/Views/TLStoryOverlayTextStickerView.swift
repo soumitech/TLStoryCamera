@@ -16,21 +16,21 @@ class TLStoryOverlayTextStickerView: UIView {
     public weak var delegate:TLStoryOverlayTextStickerViewDelegate?
     
     fileprivate var textAlignmentBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_align_center"), for: .normal)
         return btn
     }()
     
     fileprivate var textBgColorBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setImage(UIImage.tl_imageWithNamed(named: "story_publish_icon_no_background"), for: .normal)
         return btn
     }()
     
     fileprivate var confrimBtn: TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.showsTouchWhenHighlighted = true
         btn.setTitle("确定", for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
@@ -64,8 +64,8 @@ class TLStoryOverlayTextStickerView: UIView {
     
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override init(frame: CGRect) {
@@ -93,8 +93,8 @@ class TLStoryOverlayTextStickerView: UIView {
         confrimBtn.bounds = CGRect.init(x: 0, y: 0, width: 55, height: 55)
         confrimBtn.center = CGPoint.init(x: self.width - confrimBtn.width / 2, y:confrimBtn.height / 2)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -141,7 +141,7 @@ class TLStoryOverlayTextStickerView: UIView {
             return
         }
         
-        guard let frame = (sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue else {
+        guard let frame = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue else {
             return
         }
         let toPoint = CGPoint.init(x: self.width / 2, y: (self.height - frame.height) / 2)
@@ -254,10 +254,10 @@ class TLStoryOverlayTextStickerView: UIView {
             textColor = editingSticker!.cColor.textColor
         }
         
-        editingSticker!.textView.textStorage.addAttributes([NSAttributedStringKey.font:font!,
-                                                            NSAttributedStringKey.paragraphStyle:paragraphStyle,
-                                                            NSAttributedStringKey.backgroundColor:bgColor,
-                                                            NSAttributedStringKey.foregroundColor:textColor
+        editingSticker!.textView.textStorage.addAttributes([NSAttributedString.Key.font:font!,
+                                                            NSAttributedString.Key.paragraphStyle:paragraphStyle,
+                                                            NSAttributedString.Key.backgroundColor:bgColor,
+                                                            NSAttributedString.Key.foregroundColor:textColor
             ], range: range)
         
         editingSticker!.textView.textAlignment = textAlignment

@@ -29,7 +29,7 @@ class TLStoryBottomImagePickerView: UIView {
     }()
     
     fileprivate var authorizationBtn:TLButton = {
-        let btn = TLButton.init(type: UIButtonType.custom)
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
         btn.setTitle("允许访问照片", for: .normal)
         btn.setTitleColor(UIColor.init(colorHex: 0x4797e1, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
