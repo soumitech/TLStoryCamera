@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AE577D221C89E0800DA5EB6 /* TLStoryCameraResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE577D121C89E0800DA5EB6 /* TLStoryCameraResource.swift */; };
 		4B58E8942028249A00C29299 /* TLStoryCameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8CC202824B700C29299 /* UIColor+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89D202824B700C29299 /* UIColor+TLStory.swift */; };
 		4B58E8CD202824B700C29299 /* UIImage+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89E202824B700C29299 /* UIImage+TLStory.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1AE577D121C89E0800DA5EB6 /* TLStoryCameraResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLStoryCameraResource.swift; sourceTree = "<group>"; };
 		4B58E88F2028249A00C29299 /* TLStoryCameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TLStoryCameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLStoryCameraFramework.h; sourceTree = "<group>"; };
 		4B58E8932028249A00C29299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				4B58E8A2202824B700C29299 /* TextLayoutManager */,
 				4B58E8A5202824B700C29299 /* GPUImageFilter */,
 				4B58E8AB202824B700C29299 /* GPUImageExtension */,
+				1AE577D121C89E0800DA5EB6 /* TLStoryCameraResource.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				4B58E8CF202824B700C29299 /* JLHUD.swift in Sources */,
 				4B58E8EC202824B700C29299 /* TLStoryOverlayTextStickerView.swift in Sources */,
 				4B58E8D4202824B700C29299 /* GPUImageCustomLookupFilter.swift in Sources */,
+				1AE577D221C89E0800DA5EB6 /* TLStoryCameraResource.swift in Sources */,
 				4B58E8CC202824B700C29299 /* UIColor+TLStory.swift in Sources */,
 				4B58E8D3202824B700C29299 /* TLGPUImageAlphaBlendFilter.m in Sources */,
 				4B58E8ED202824B700C29299 /* TLStoryColorPickerView.swift in Sources */,

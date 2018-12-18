@@ -10,9 +10,6 @@ import Foundation
 
 extension UIImage {
     public static func tl_imageWithNamed(named:String) -> UIImage? {
-        let bundlePath = Bundle.main.path(forResource: "TLStoryCameraResources", ofType: "bundle")
-        let bundle = Bundle.init(path: bundlePath!)
-        
         var imgNamed = named
         if UIScreen.main.scale == 2.0 {
             imgNamed.append("@2x")
@@ -20,21 +17,17 @@ extension UIImage {
             imgNamed.append("@3x")
         }
         
-        let path = bundle?.path(forResource: imgNamed, ofType: "png", inDirectory: "TLStoryCameraRes")
+        let path = TLStoryCameraResource.path(forResource: imgNamed, ofType: "png", inDirectory: "TLStoryCameraRes")
         return UIImage.init(contentsOfFile: path!)
     }
     
     public static func imageWithStickers(named:String) -> UIImage? {
-        let bundlePath = Bundle.main.path(forResource: "TLStoryCameraResources", ofType: "bundle")
-        let bundle = Bundle.init(path: bundlePath!)
-        let path = bundle?.path(forResource: named, ofType: "png", inDirectory: "TLStoryCameraStickers")
+        let path = TLStoryCameraResource.path(forResource: named, ofType: "png", inDirectory: "TLStoryCameraStickers")
         return UIImage.init(contentsOfFile: path!)
     }
     
     public static func imageWithFilter(named:String) -> UIImage? {
-        let bundlePath = Bundle.main.path(forResource: "TLStoryCameraResources", ofType: "bundle")
-        let bundle = Bundle.init(path: bundlePath!)
-        let path = bundle?.path(forResource: named, ofType: "png", inDirectory: "TLStoryCameraFilter")
+        let path = TLStoryCameraResource.path(forResource: named, ofType: "png", inDirectory: "TLStoryCameraFilter")
 
         return UIImage.init(contentsOfFile: path!)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TLStoryConfiguration: NSObject {
+public class TLStoryConfiguration: NSObject {
     //是否开启美颜
     public static let openBeauty:Bool = false
     
