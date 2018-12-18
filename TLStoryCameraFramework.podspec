@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
   s.dependency 'GPUImage'
   s.dependency 'MBProgressHUD'
-  s.resource = 'TLStoryCameraResources.bundle'
+  s.resource = 'TLStoryCameraFramework/TLStoryCameraFramework/Resource/TLStoryCameraResources.bundle'
 
 end

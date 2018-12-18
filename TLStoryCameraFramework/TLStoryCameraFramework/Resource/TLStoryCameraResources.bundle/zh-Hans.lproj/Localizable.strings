@@ -1,0 +1,14 @@
+"tl_permisson_request_title" = "允许访问即可拍摄照片和视频";
+"tl_open_camera_permission" = "启用相机访问权限";
+"tl_opened_camera_permission" = "相机访问权限已启用";
+"tl_open_audio_permission" = "启用麦克风访问权限";
+"tl_opened_audio_permission" = "麦克风访问权限已启用";
+"tl_swipe_up_open_album" = "向上滑动打开相册";
+"tl_allow_access_photo" = "允许访问照片";
+"tl_allow_access_album_hint" = "要将最新的照片和视频加入故事，请允许\n访问照片";
+"tl_last_24_hours" = "过去24小时";
+"tl_last_24_hours_no_photo" = "过去24小时内没有照片";
+"tl_publish" = "发布";
+"tl_confirm" = "确定";
+"tl_camera_shoot_bubble_text" = "点击拍照，长按拍摄视频";
+"tl_camera_shoot_bubble_for_video" = "长按拍摄视频";

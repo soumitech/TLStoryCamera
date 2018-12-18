@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AE577D221C89E0800DA5EB6 /* TLStoryCameraResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE577D121C89E0800DA5EB6 /* TLStoryCameraResource.swift */; };
+		1AE577F021C8AAAB00DA5EB6 /* TLStoryCameraResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1AE577EF21C8AAAB00DA5EB6 /* TLStoryCameraResources.bundle */; };
 		4B58E8942028249A00C29299 /* TLStoryCameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B58E8CC202824B700C29299 /* UIColor+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89D202824B700C29299 /* UIColor+TLStory.swift */; };
 		4B58E8CD202824B700C29299 /* UIImage+TLStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58E89E202824B700C29299 /* UIImage+TLStory.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		1AE577D121C89E0800DA5EB6 /* TLStoryCameraResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLStoryCameraResource.swift; sourceTree = "<group>"; };
+		1AE577EF21C8AAAB00DA5EB6 /* TLStoryCameraResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TLStoryCameraResources.bundle; path = TLStoryCameraFramework/Resource/TLStoryCameraResources.bundle; sourceTree = SOURCE_ROOT; };
 		4B58E88F2028249A00C29299 /* TLStoryCameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TLStoryCameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLStoryCameraFramework.h; sourceTree = "<group>"; };
 		4B58E8932028249A00C29299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +135,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1AE577EE21C8AA7E00DA5EB6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1AE577EF21C8AAAB00DA5EB6 /* TLStoryCameraResources.bundle */,
+			);
+			name = Resource;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4B58E8852028249A00C29299 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +165,7 @@
 		4B58E8912028249A00C29299 /* TLStoryCameraFramework */ = {
 			isa = PBXGroup;
 			children = (
+				1AE577EE21C8AA7E00DA5EB6 /* Resource */,
 				4B58E89A202824B700C29299 /* Class */,
 				4B58E8922028249A00C29299 /* TLStoryCameraFramework.h */,
 				4B58E8932028249A00C29299 /* Info.plist */,
@@ -365,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE577F021C8AAAB00DA5EB6 /* TLStoryCameraResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

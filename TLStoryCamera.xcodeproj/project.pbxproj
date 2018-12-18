@@ -11,7 +11,6 @@
 		4B40E5721ED9251000CAE2AC /* FristViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40E5711ED9251000CAE2AC /* FristViewController.swift */; };
 		4B40E5741ED926E700CAE2AC /* FristSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40E5731ED926E700CAE2AC /* FristSubViewController.swift */; };
 		4B89DFFD2028556B0035573C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89DFFC2028556B0035573C /* Assets.xcassets */; };
-		4B89DFFF2028580E0035573C /* TLStoryCameraResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B89DFFE2028580D0035573C /* TLStoryCameraResources.bundle */; };
 		594A5575CD7E0A3BFF1E3870 /* Pods_TLStoryCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3930CB2AE89EED66E5886D8 /* Pods_TLStoryCamera.framework */; };
 		C64E77501EC00D9C005B09B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64E774F1EC00D9C005B09B6 /* AppDelegate.swift */; };
 		C64E775A1EC00D9C005B09B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64E77581EC00D9C005B09B6 /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 		4B40E5711ED9251000CAE2AC /* FristViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FristViewController.swift; sourceTree = "<group>"; };
 		4B40E5731ED926E700CAE2AC /* FristSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FristSubViewController.swift; sourceTree = "<group>"; };
 		4B89DFFC2028556B0035573C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B89DFFE2028580D0035573C /* TLStoryCameraResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TLStoryCameraResources.bundle; sourceTree = "<group>"; };
 		4DFA66A802FB8CDF44D4B2E3 /* Pods-TLStoryCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLStoryCamera.release.xcconfig"; path = "Target Support Files/Pods-TLStoryCamera/Pods-TLStoryCamera.release.xcconfig"; sourceTree = "<group>"; };
 		A3930CB2AE89EED66E5886D8 /* Pods_TLStoryCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TLStoryCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64E774C1EC00D9C005B09B6 /* TLStoryCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLStoryCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +75,6 @@
 		C64E77431EC00D9C005B09B6 = {
 			isa = PBXGroup;
 			children = (
-				4B89DFFE2028580D0035573C /* TLStoryCameraResources.bundle */,
 				C64E774E1EC00D9C005B09B6 /* TLStoryCamera */,
 				C64E774D1EC00D9C005B09B6 /* Products */,
 				4B89DFEA2028400B0035573C /* Frameworks */,
@@ -171,7 +168,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B89DFFF2028580E0035573C /* TLStoryCameraResources.bundle in Resources */,
 				C64E775A1EC00D9C005B09B6 /* LaunchScreen.storyboard in Resources */,
 				4B89DFFD2028556B0035573C /* Assets.xcassets in Resources */,
 			);
@@ -260,6 +256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -318,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

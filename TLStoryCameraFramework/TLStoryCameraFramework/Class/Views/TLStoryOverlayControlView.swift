@@ -170,7 +170,7 @@ class TLPhotoLibraryHintView: UIView {
         let label = UILabel.init()
         label.textColor = UIColor.init(colorHex: 0xffffff, alpha: 0.8)
         label.font = UIFont.systemFont(ofSize: 12)
-        label.text = "向上滑动打开相册"
+        label.text = TLStoryCameraResource.string(key: "tl_swipe_up_open_album")
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         label.layer.shadowRadius = 2

@@ -1,0 +1,14 @@
+"tl_permisson_request_title" = "Permission needed for take photo&videos";
+"tl_open_camera_permission" = "Allow camera access";
+"tl_opened_camera_permission" = "Camera access allowed";
+"tl_open_audio_permission" = "Allow microphone access";
+"tl_opened_audio_permission" = "Microphone access allowed";
+"tl_swipe_up_open_album" = "Swipe up to open album";
+"tl_allow_access_photo" = "Album access allowed";
+"tl_allow_access_album_hint" = "To add latest photos in album, please \nallow album access";
+"tl_last_24_hours" = "Last 24 hours";
+"tl_last_24_hours_no_photo" = "No photo taked in last 24 hours";
+"tl_publish" = "publish";
+"tl_confirm" = "OK";
+"tl_camera_shoot_bubble_text" = "Tap for photo, hold for video";
+"tl_camera_shoot_bubble_for_video" = "Hold for video";

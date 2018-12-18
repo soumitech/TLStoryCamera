@@ -30,7 +30,7 @@ class TLStoryBottomImagePickerView: UIView {
     
     fileprivate var authorizationBtn:TLButton = {
         let btn = TLButton.init(type: UIButton.ButtonType.custom)
-        btn.setTitle("允许访问照片", for: .normal)
+        btn.setTitle(TLStoryCameraResource.string(key: "tl_allow_access_photo"), for: .normal)
         btn.setTitleColor(UIColor.init(colorHex: 0x4797e1, alpha: 1), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         btn.isHidden = true
@@ -67,7 +67,7 @@ class TLStoryBottomImagePickerView: UIView {
     
     public func loadPhotos() {
         if !TLAuthorizedManager.checkAuthorization(with: .album) {
-            self.hintLabel.text = "要将最新的照片和视频加入故事，请允许\n访问照片"
+            self.hintLabel.text = TLStoryCameraResource.string(key: "tl_allow_access_album_hint")
             self.hintLabel.font = UIFont.systemFont(ofSize: 15)
             self.hintLabel.sizeToFit()
             self.hintLabel.center = CGPoint.init(x: self.width / 2, y: 20 + self.hintLabel.height / 2)
@@ -90,12 +90,12 @@ class TLStoryBottomImagePickerView: UIView {
             }
             
             if self.imgs.count > 0 {
-                self.hintLabel.text = "过去24小时"
+                self.hintLabel.text = TLStoryCameraResource.string(key: "tl_last_24_hours")
                 self.hintLabel.font = UIFont.systemFont(ofSize: 12)
                 self.hintLabel.sizeToFit()
                 self.hintLabel.center = CGPoint.init(x: self.width / 2, y: 23 / 2)
             }else {
-                self.hintLabel.text = "过去24小时内没有照片"
+                self.hintLabel.text = TLStoryCameraResource.string(key: "tl_last_24_hours_no_photo")
                 self.hintLabel.font = UIFont.systemFont(ofSize: 12)
                 self.hintLabel.sizeToFit()
                 self.hintLabel.center = CGPoint.init(x: self.width / 2, y: self.height / 2)
