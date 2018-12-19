@@ -23,6 +23,9 @@ public class TLStoryConfiguration: NSObject {
     
     public static var showCameraBtnHint: Bool = true
     
+    // false: Show last 4 hours, true: show all photos
+    public static var photoLibrayShowAllPhotos: Bool = true
+    
     //最大镜头焦距
     public static var maxVideoZoomFactor:CGFloat = 20
     

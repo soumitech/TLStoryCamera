@@ -37,7 +37,7 @@ class TLStoryBottomImagePickerView: UIView {
         return btn
     }()
     
-    fileprivate var imgs = [PHAsset]()
+    fileprivate var imgs: PHFetchResult<PHAsset>?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,29 +73,42 @@ class TLStoryBottomImagePickerView: UIView {
             self.hintLabel.center = CGPoint.init(x: self.width / 2, y: 20 + self.hintLabel.height / 2)
             self.authorizationBtn.isHidden = false
         }else {
-            self.imgs.removeAll()
-            
             let options = PHFetchOptions()
             options.sortDescriptors = [NSSortDescriptor.init(key: "creationDate", ascending: false)]
-            let results = PHAsset.fetchAssets(with: options)
-            let dayLate = NSDate().timeIntervalSince1970 - 24 * 60 * 60
             
-            var count = 0
-            while count < results.count {
-                let r = results[count]
-                if r.creationDate?.timeIntervalSince1970 ?? 0 > dayLate {
-                    self.imgs.append(r)
-                }
-                count += 1
+            var predicateFmt: String = ""
+            var predicateArgs: [Any] = []
+            
+            if (TLStoryConfiguration.restrictMediaType == .photo) {
+                predicateFmt.append("mediaType = %d")
+                predicateArgs.append(PHAssetMediaType.image.rawValue)
+            } else if (TLStoryConfiguration.restrictMediaType == .video) {
+                predicateFmt.append("mediaType = %d")
+                predicateArgs.append(PHAssetMediaType.video.rawValue)
             }
             
-            if self.imgs.count > 0 {
-                self.hintLabel.text = TLStoryCameraResource.string(key: "tl_last_24_hours")
+            if (!TLStoryConfiguration.photoLibrayShowAllPhotos) {
+                if (predicateArgs.count > 0) {
+                    predicateFmt.append(" AND ")
+                }
+                let dayLate = NSDate().addingTimeInterval(-24 * 60 * 60)
+                predicateFmt.append("creationDate >= %@")
+                predicateArgs.append(dayLate)
+            }
+            
+            if (predicateArgs.count > 0) {
+                options.predicate = NSPredicate.init(format: predicateFmt, argumentArray: predicateArgs)
+            }
+            
+            imgs = PHAsset.fetchAssets(with: options)
+            
+            if self.imgs!.count > 0 {
+                self.hintLabel.text = TLStoryConfiguration.photoLibrayShowAllPhotos ? TLStoryCameraResource.string(key: "tl_album") : TLStoryCameraResource.string(key: "tl_last_24_hours")
                 self.hintLabel.font = UIFont.systemFont(ofSize: 12)
                 self.hintLabel.sizeToFit()
                 self.hintLabel.center = CGPoint.init(x: self.width / 2, y: 23 / 2)
             }else {
-                self.hintLabel.text = TLStoryCameraResource.string(key: "tl_last_24_hours_no_photo")
+                self.hintLabel.text = TLStoryConfiguration.photoLibrayShowAllPhotos ? TLStoryCameraResource.string(key: "tl_no_media") : TLStoryCameraResource.string(key: "tl_last_24_hours_no_photo")
                 self.hintLabel.font = UIFont.systemFont(ofSize: 12)
                 self.hintLabel.sizeToFit()
                 self.hintLabel.center = CGPoint.init(x: self.width / 2, y: self.height / 2)
@@ -118,19 +131,33 @@ class TLStoryBottomImagePickerView: UIView {
 
 extension TLStoryBottomImagePickerView: UICollectionViewDelegate, UICollectionViewDataSource {
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgs.count
+        return imgs?.count ?? 0
     }
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TLPhotoLibraryPickerCell
-        cell.set(asset: self.imgs[indexPath.row])
+        cell.set(asset: self.imgs![indexPath.row])
         return cell
     }
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let asset = self.imgs[indexPath.row]
+        let asset = self.imgs![indexPath.row]
         print(asset.mediaType)
         if asset.mediaType == .video {
             PHImageManager.default().requestAVAsset(forVideo: asset, options: nil) { (ass, mix, map) in
                 guard let url = (ass as? AVURLAsset)?.url else {
+                    return
+                }
+                if (asset.duration < TLStoryConfiguration.minVideoTime) {
+                    let text = String.init(format: TLStoryCameraResource.string(key: "tl_select_video_too_short"), "\(TLStoryConfiguration.minVideoTime)")
+                    DispatchQueue.main.async {
+                        JLHUD.show(text: text, delay: 1.5)
+                    }
+                    return
+                }
+                if (asset.duration > TLStoryConfiguration.maxVideoTime) {
+                    let text = String.init(format: TLStoryCameraResource.string(key: "tl_select_video_too_long"), "\(TLStoryConfiguration.maxVideoTime)")
+                    DispatchQueue.main.async {
+                        JLHUD.show(text: text, delay: 1.5)
+                    }
                     return
                 }
                 DispatchQueue.main.async {

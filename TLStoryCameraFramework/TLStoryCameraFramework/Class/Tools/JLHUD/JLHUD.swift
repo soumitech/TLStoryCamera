@@ -28,6 +28,7 @@ class JLHUD {
         let hud = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
         hud.mode = .text
         hud.label.text = text
+        hud.label.numberOfLines = 0
         hud.hide(animated: true, afterDelay: delay)
     }
 }

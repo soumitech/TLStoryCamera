@@ -8,9 +8,13 @@
 "tl_allow_access_album_hint" = "To add latest photos in album, please \nallow album access";
 "tl_last_24_hours" = "Last 24 hours";
 "tl_last_24_hours_no_photo" = "No photo taked in last 24 hours";
+"tl_album" = "Album";
+"tl_no_media" = "No media taked";
 "tl_publish" = "publish";
 "tl_confirm" = "OK";
 "tl_photo_video_hint" = "Tap for photo, hold for video";
 "tl_video_hint" = "Hold for video";
 "tl_photo_hint" = "Tap for photo";
 "tl_video_too_short" = "Video is too short, please record at least %@s";
+"tl_select_video_too_short" = "Video is too short, please select at least %@s duration";
+"tl_select_video_too_long" = "Video is too long, please select at max %@s duration";
