@@ -55,7 +55,7 @@ class TLStoryColorPickerView: UIView {
     fileprivate var colors:[TLStoryColor] = {
         var array = [TLStoryColor]()
         
-        if let path = TLStoryCameraResource.path(forResource: "WBStoryTextColor", ofType: "plist", inDirectory: nil), // HBY no indirectory
+        if let path = TLStoryCameraResource.path(forResource: "WBStoryTextColor", ofType: "plist", inDirectory: nil), 
             let colors = NSArray.init(contentsOfFile: path) as? [[String:String]] {
             for colorDic in colors {
                 array.append(TLStoryColor.init(color: colorDic))
