@@ -26,6 +26,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TLStoryConfiguration.restrictMediaType = nil
+        
         scrollView.frame = view.bounds
         scrollView.backgroundColor = UIColor.white
         scrollView.contentSize = CGSize(width: screenWidth * 2, height: 0)

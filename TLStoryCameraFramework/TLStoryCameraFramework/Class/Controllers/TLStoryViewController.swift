@@ -255,7 +255,21 @@ extension TLStoryViewController: TLStoryOverlayControlDelegate {
         captureView!.camera(distance: distance)
     }
     
-    internal func storyOverlayCameraRecordingFinish(type: TLStoryType) {
+    internal func storyOverlayCameraRecordingFinish(type: TLStoryType, recordTime: TimeInterval) {
+        let isExpectVideo = TLStoryConfiguration.restrictMediaType == .video || type == .video
+        if (isExpectVideo && (type == .photo || recordTime < TLStoryConfiguration.minVideoTime)) {
+            let hint = String.init(format: TLStoryCameraResource.string(key: "tl_video_too_short"), "\(round(TLStoryConfiguration.minVideoTime))")
+            JLHUD.show(text: hint, delay: 1)
+            self.controlView?.dismiss()
+            self.captureView?.destroy()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.controlView?.display()
+                self.captureView?.resumeCamera()
+                self.output.reset()
+            }
+            return
+        }
+        
         if type == .photo {
             self.captureView?.capturePhoto(complete: { (image) in
                 if let img = image {

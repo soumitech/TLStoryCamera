@@ -10,5 +10,7 @@
 "tl_last_24_hours_no_photo" = "过去24小时内没有照片";
 "tl_publish" = "发布";
 "tl_confirm" = "确定";
-"tl_camera_shoot_bubble_text" = "点击拍照，长按拍摄视频";
-"tl_camera_shoot_bubble_for_video" = "长按拍摄视频";
+"tl_photo_video_hint" = "轻点拍照，长按视频";
+"tl_video_hint" = "长按拍摄视频";
+"tl_photo_hint" = "轻点拍照";
+"tl_video_too_short" = "视频太短了，请至少录制%@秒";

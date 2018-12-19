@@ -66,11 +66,13 @@ class TLStoryCameraButton: UIControl {
     
     fileprivate var timer:CADisplayLink?
     
-    fileprivate var percent:CGFloat = 0
+    fileprivate var percent:Double = 0
     
-    fileprivate var totalPercent = CGFloat(Double.pi * 2.0) / CGFloat(TLStoryConfiguration.maxRecordingTime)
+    fileprivate var totalPercent = Double.pi * 2.0 / TLStoryConfiguration.maxVideoTime
     
-    fileprivate var progress:CGFloat = 0
+    internal var progress:Double = 0
+    
+    fileprivate var timerFirstTimestamp: CFTimeInterval? = nil
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -105,7 +107,7 @@ class TLStoryCameraButton: UIControl {
     
     @objc fileprivate func complete() {
         self.stopTimer()
-        self.delegete?.cameraComplete(hoopButton: self, type: self.progress < CGFloat(TLStoryConfiguration.minRecordingTime) ? .photo : .video)
+        self.delegete?.cameraComplete(hoopButton: self, type: self.progress < TLStoryConfiguration.asPhotoValveTime ? .photo : .video)
         percent = 0
         progress = 0
         self.setNeedsDisplay()
@@ -139,19 +141,22 @@ class TLStoryCameraButton: UIControl {
         
     @objc fileprivate func startAction(sender:UIButton) {
         self.delegete?.cameraStart(hoopButton: self)
-        self.bounds = CGRect.init(x: 0, y: 0, width: zoomInSize.width, height: zoomInSize.height)
-        self.center = CGPoint.init(x: superview!.width / 2, y: superview!.bounds.height - 30 - 60)
-        self.insideCircleView.center = centerPoint
-        self.gradientLayer.bounds = self.bounds;
-        self.gradientLayer.position = self.centerPoint
-        insideCircleViewTransform = insideCircleView.transform
-        blureCircleViewTransform = blureCircleView.transform
-        self.touchBeginAnim()
-        self.startTimer()
+        if TLStoryConfiguration.restrictMediaType != .photo {
+            self.bounds = CGRect.init(x: 0, y: 0, width: zoomInSize.width, height: zoomInSize.height)
+            self.center = CGPoint.init(x: superview!.width / 2, y: superview!.bounds.height - 30 - 60)
+            self.insideCircleView.center = centerPoint
+            self.gradientLayer.bounds = self.bounds;
+            self.gradientLayer.position = self.centerPoint
+            insideCircleViewTransform = insideCircleView.transform
+            blureCircleViewTransform = blureCircleView.transform
+            self.touchBeginAnim()
+            self.startTimer()
+        }
     }
     
     fileprivate func startTimer() {
         timer?.invalidate()
+        timerFirstTimestamp = nil
         timer = CADisplayLink.init(target: self, selector: #selector(countDownd))
         timer?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
@@ -172,10 +177,15 @@ class TLStoryCameraButton: UIControl {
     }
     
     @objc fileprivate func countDownd() {
-        progress += 1
+        if let starts = timerFirstTimestamp {
+            progress = timer!.timestamp - starts
+        } else {
+            progress = 0
+            timerFirstTimestamp = timer!.timestamp
+        }
         percent = totalPercent * progress
         
-        if progress > CGFloat(TLStoryConfiguration.maxRecordingTime) {
+        if progress > TLStoryConfiguration.maxVideoTime {
             self.cancelTracking(with: nil)
         }
         self.setNeedsDisplay()
@@ -213,7 +223,7 @@ class TLStoryCameraButton: UIControl {
     }
     
     internal override func draw(_ rect: CGRect) {
-        let path = UIBezierPath.init(arcCenter: CGPoint.init(x: self.width / 2.0, y: self.height / 2.0), radius: 58, startAngle:  1.5 * CGFloat(Double.pi), endAngle: 1.5 * CGFloat(Double.pi) + percent, clockwise: true)
+        let path = UIBezierPath.init(arcCenter: CGPoint.init(x: self.width / 2.0, y: self.height / 2.0), radius: 58, startAngle:  1.5 * CGFloat(Double.pi), endAngle: CGFloat(1.5 * Double.pi + percent), clockwise: true)
         self.ringMaskLayer.path = path.cgPath
     }
     

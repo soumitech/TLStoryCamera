@@ -10,7 +10,7 @@ import UIKit
 
 protocol TLStoryOverlayControlDelegate: NSObjectProtocol {
     func storyOverlayCameraRecordingStart()
-    func storyOverlayCameraRecordingFinish(type:TLStoryType)
+    func storyOverlayCameraRecordingFinish(type:TLStoryType, recordTime: TimeInterval)
     func storyOverlayCameraZoom(distance:CGFloat)
     func storyOverlayCameraFlashChange() -> AVCaptureDevice.TorchMode
     func storyOverlayCameraSwitch()
@@ -47,6 +47,16 @@ class TLStoryOverlayControlView: UIView {
         return btn
     }()
     
+    fileprivate lazy var cameraBtnHintLabel: UILabel = {
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+        l.font = UIFont.systemFont(ofSize: 15)
+        l.textColor = UIColor.init(colorHex: 0xffffff, alpha: 0.8)
+        l.text = TLStoryConfiguration.restrictMediaType == nil ? TLStoryCameraResource.string(key: "tl_photo_video_hint") :
+            (TLStoryConfiguration.restrictMediaType == .photo ? TLStoryCameraResource.string(key: "tl_photo_hint") : TLStoryCameraResource.string(key: "tl_video_hint"))
+        l.sizeToFit()
+        return l
+    }()
+    
     fileprivate var photoLibraryHintView:TLPhotoLibraryHintView?
     
     fileprivate var tapGesture:UITapGestureRecognizer?
@@ -63,6 +73,11 @@ class TLStoryOverlayControlView: UIView {
         cameraBtn.center = CGPoint.init(x: self.center.x, y: self.bounds.height - 52 - 40)
         cameraBtn.delegete = self
         addSubview(cameraBtn)
+        
+        if (TLStoryConfiguration.showCameraBtnHint) {
+            cameraBtnHintLabel.center = CGPoint.init(x: self.center.x, y: cameraBtn.centerY - cameraBtn.height / 2 - 20 / 2 - 5)
+            addSubview(cameraBtnHintLabel)
+        }
         
         flashBtn.sizeToFit()
         flashBtn.center = CGPoint.init(x: cameraBtn.centerX - 100, y: cameraBtn.centerY)
@@ -93,6 +108,7 @@ class TLStoryOverlayControlView: UIView {
         self.isHidden = true
         self.cameraBtn.reset()
         self.photoLibraryHintView?.isHidden = false
+        self.cameraBtnHintLabel.isHidden = false
     }
     
     public func display() {
@@ -152,6 +168,7 @@ extension TLStoryOverlayControlView: TLStoryCameraButtonDelegate {
     internal func cameraStart(hoopButton: TLStoryCameraButton) {
         self.delegate?.storyOverlayCameraRecordingStart()
         photoLibraryHintView?.isHidden = true
+        cameraBtnHintLabel.isHidden = true
     }
     
     internal func cameraDrag(hoopButton: TLStoryCameraButton, offsetY: CGFloat) {
@@ -159,7 +176,7 @@ extension TLStoryOverlayControlView: TLStoryCameraButtonDelegate {
     }
     
     internal func cameraComplete(hoopButton: TLStoryCameraButton, type: TLStoryType) {
-        self.delegate?.storyOverlayCameraRecordingFinish(type: type)
+        self.delegate?.storyOverlayCameraRecordingFinish(type: type, recordTime: hoopButton.progress)
         self.isHidden = true
     }
 }

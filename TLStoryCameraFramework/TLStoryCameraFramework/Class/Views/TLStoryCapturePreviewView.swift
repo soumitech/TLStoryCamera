@@ -229,7 +229,7 @@ class TLStoryCapturePreviewView: GPUImageView {
         focusRing.layer.add(focusAnim, forKey: nil)
     }
     
-    fileprivate func destroy() {
+    internal func destroy() {
         beautifyFilter?.removeTarget(self.movieWriter!)
         movieWriter = nil
         videoCamera?.audioEncodingTarget = nil

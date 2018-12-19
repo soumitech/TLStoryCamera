@@ -10,5 +10,7 @@
 "tl_last_24_hours_no_photo" = "No photo taked in last 24 hours";
 "tl_publish" = "publish";
 "tl_confirm" = "OK";
-"tl_camera_shoot_bubble_text" = "Tap for photo, hold for video";
-"tl_camera_shoot_bubble_for_video" = "Hold for video";
+"tl_photo_video_hint" = "Tap for photo, hold for video";
+"tl_video_hint" = "Hold for video";
+"tl_photo_hint" = "Tap for photo";
+"tl_video_too_short" = "Video is too short, please record at least %@s";
