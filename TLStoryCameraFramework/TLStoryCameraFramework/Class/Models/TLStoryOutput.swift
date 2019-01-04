@@ -147,7 +147,7 @@ class TLStoryOutput: NSObject {
             return
         }
         
-        movieWriter = GPUImageMovieWriter.init(movieURL: exportUrl, size: TLStoryConfiguration.outputVideoSize)
+        movieWriter = GPUImageMovieWriter(movieURL: exportUrl, size: TLStoryConfiguration.outputVideoSize, fileType: TLStoryConfiguration.videoFileType, outputSettings: TLStoryConfiguration.videoSetting)
         
         if audioEnable {
             movieWriter?.shouldPassthroughAudio = audioEnable

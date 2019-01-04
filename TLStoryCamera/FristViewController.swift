@@ -26,7 +26,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TLStoryConfiguration.restrictMediaType = .video
+        TLStoryConfiguration.restrictMediaType = nil
         TLStoryConfiguration.photoLibrayShowAllPhotos = false
         
         scrollView.frame = view.bounds

@@ -33,24 +33,44 @@ public class TLStoryConfiguration: NSObject {
     // TODO: move it to viewController instead of global setting
     public static var restrictMediaType: TLStoryType? = nil
     
+    // 是否压缩视频
+    public static var compressVideo: Bool = true
+    
+    public static var TLMediaSize: CGSize = {
+        if compressVideo {
+            let scale: CGFloat = 0.4
+            return CGSize(width: 720 * scale, height: 1280 * scale)
+        } else {
+            return CGSize(width: 720, height: 1280)
+        }
+    }()
+    
     //视频输入
-    public static var videoSetting:[String : Any] = [
-        AVVideoCodecKey : AVVideoCodecH264,
-        AVVideoWidthKey : 720,
-        AVVideoHeightKey: 1280,
-        AVVideoCompressionPropertiesKey:
-            [
+    public static var videoSetting: [String : Any] = {
+        
+        var settins: [String: Any] = [
+                AVVideoCodecKey : AVVideoCodecH264,
+                AVVideoWidthKey : TLMediaSize.width,
+                AVVideoHeightKey: TLMediaSize.height]
+        
+        if TLStoryConfiguration.compressVideo {
+            settins[AVVideoCompressionPropertiesKey] = [AVVideoProfileLevelKey : AVVideoProfileLevelH264HighAutoLevel]
+        } else {
+            settins[AVVideoCompressionPropertiesKey] = [
                 AVVideoProfileLevelKey : AVVideoProfileLevelH264Main31,
                 AVVideoAllowFrameReorderingKey : false,
                 //码率
-                AVVideoAverageBitRateKey : 720 * 1280 * 3
-        ]
-    ]
+                 AVVideoAverageBitRateKey : 720 * 1280 * 3
+            ]
+        }
+        return settins
+    }()
+    
     
     //音频输入
     public static var audioSetting:[String : Any] = [
         AVFormatIDKey : kAudioFormatMPEG4AAC,
-        AVNumberOfChannelsKey : 2,
+        AVNumberOfChannelsKey : TLStoryConfiguration.compressVideo ? 1 : 2,
         AVSampleRateKey : 16000,
         AVEncoderBitRateKey : 32000
     ]
@@ -62,10 +82,10 @@ public class TLStoryConfiguration: NSObject {
     public static var captureSessionPreset:String = AVCaptureSession.Preset.hd1280x720.rawValue
     
     //输出的视频尺寸
-    public static var outputVideoSize:CGSize = CGSize.init(width: 720, height: 1280)
+    public static var outputVideoSize:CGSize = TLMediaSize
     
     //输出的图片尺寸
-    public static var outputPhotoSize:CGSize = CGSize.init(width: 1080, height: 1920)
+    public static var outputPhotoSize:CGSize = TLMediaSize
     
     //视频路径
     public static var videoPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/storyvideo")
@@ -88,7 +108,7 @@ public class TLStoryConfiguration: NSObject {
     public static var defaultTextWeight:CGFloat = 30
     
     //导出水印
-    public static var watermarkImage:UIImage? = UIImage.init(named: "watermark")
+    public static var watermarkImage:UIImage? = nil
     //导出水印位置
     public static var watermarkPosition:UIEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 10, right: 10)
 }
