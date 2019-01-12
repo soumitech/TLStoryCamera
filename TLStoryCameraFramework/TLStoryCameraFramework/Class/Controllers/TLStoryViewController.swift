@@ -169,13 +169,14 @@ public class TLStoryViewController: UIViewController {
         let cameraAuthorization = TLAuthorizedManager.checkAuthorization(with: .camera)
         let micAuthorization = TLAuthorizedManager.checkAuthorization(with: .mic)
         
+        if cameraAuthorization {
+            self.cameraStart()
+        }
+        if micAuthorization {
+            captureView!.enableAudio()
+        }
+        
         if cameraAuthorization && micAuthorization {
-            if cameraAuthorization {
-                self.cameraStart()
-            }
-            if micAuthorization {
-                captureView!.enableAudio()
-            }
             controlView!.isHidden = false
         }else {
             let authorizedVC = TLStoryAuthorizationController()
