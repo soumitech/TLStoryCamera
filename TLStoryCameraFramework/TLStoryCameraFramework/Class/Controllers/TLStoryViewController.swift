@@ -432,4 +432,9 @@ extension TLStoryViewController: TLStoryAuthorizedDelegate {
     internal func requestAllAuthorizeSuccess() {
         self.controlView!.isHidden = false
     }
+    
+    internal func cancelAuthorizePermissions() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

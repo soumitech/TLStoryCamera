@@ -12,6 +12,7 @@ protocol TLStoryAuthorizedDelegate: NSObjectProtocol {
     func requestCameraAuthorizeSuccess()
     func requestMicAuthorizeSuccess()
     func requestAllAuthorizeSuccess()
+    func cancelAuthorizePermissions()
 }
 
 class TLStoryAuthorizationController: UIViewController {
@@ -25,6 +26,13 @@ class TLStoryAuthorizationController: UIViewController {
         lable.textColor = UIColor.init(colorHex: 0xcccccc, alpha: 1)
         lable.font = UIFont.systemFont(ofSize: 18)
         return lable
+    }()
+    
+    fileprivate var cancelBtn:TLButton = {
+        let btn = TLButton.init(type: UIButton.ButtonType.custom)
+        btn.showsTouchWhenHighlighted = true
+        btn.setImage(UIImage.tl_imageWithNamed(named: "story_icon_close"), for: .normal)
+        return btn
     }()
     
     fileprivate var openCameraBtn:TLButton = {
@@ -59,6 +67,12 @@ class TLStoryAuthorizationController: UIViewController {
         titleLabel.sizeToFit()
         titleLabel.center = CGPoint.init(x: self.view.width / 2, y: self.view.height / 2 - 45 - titleLabel.height / 2)
         
+        self.view.addSubview(cancelBtn)
+        cancelBtn.sizeToFit()
+        cancelBtn.bounds = CGRect.init(x: 0, y: 0, width: 55, height: 55)
+        cancelBtn.center = CGPoint.init(x: self.cancelBtn.width / 2, y: cancelBtn.centerY + 20)
+        cancelBtn.addTarget(self, action: #selector(cancelAuthorizationAction), for: .touchUpInside)
+        
         openCameraBtn.isSelected = TLAuthorizedManager.checkAuthorization(with: .camera)
         openMicBtn.isSelected = TLAuthorizedManager.checkAuthorization(with: .mic)
         
@@ -75,6 +89,10 @@ class TLStoryAuthorizationController: UIViewController {
         
         // 只能拍摄照片时，不用申请麦克风权限
         openMicBtn.isHidden = TLStoryConfiguration.restrictMediaType == .photo
+    }
+    
+    @objc fileprivate func cancelAuthorizationAction() {
+        self.delegate?.cancelAuthorizePermissions()
     }
     
     @objc fileprivate func openCameraAction() {

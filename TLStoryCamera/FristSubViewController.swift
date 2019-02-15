@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TLStoryCameraFramework
 
 class FirstSubViewController: UIViewController {
     override func viewDidLoad() {
@@ -18,8 +19,17 @@ class FirstSubViewController: UIViewController {
         self.view.addSubview(tipLabel)
         tipLabel.sizeToFit()
         tipLabel.center = CGPoint.init(x: self.view.width / 2, y: self.view.height / 2)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(actionOpen))
+        tipLabel.isUserInteractionEnabled = true
+        tipLabel.addGestureRecognizer(tap)
         
         self.view.backgroundColor = UIColor.gray
+        
+    }
+    
+    @objc fileprivate func actionOpen() {
+        let c = TLStoryViewController()
+        self.present(c, animated: true, completion: nil)
     }
 
 }
