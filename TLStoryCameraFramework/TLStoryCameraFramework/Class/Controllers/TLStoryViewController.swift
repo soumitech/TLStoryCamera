@@ -176,9 +176,11 @@ public class TLStoryViewController: UIViewController {
             captureView!.enableAudio()
         }
         
-        if cameraAuthorization && micAuthorization {
+        let allAuthorization = TLStoryConfiguration.restrictMediaType == .photo ? cameraAuthorization : cameraAuthorization && micAuthorization
+        
+        if allAuthorization {
             controlView!.isHidden = false
-        }else {
+        } else {
             let authorizedVC = TLStoryAuthorizationController()
             authorizedVC.view.frame = self.view.bounds
             authorizedVC.delegate = self
@@ -244,7 +246,9 @@ extension TLStoryViewController: TLStoryOverlayControlDelegate {
 
     internal func storyOverlayCameraRecordingStart() {
         captureView!.configVideoRecording()
-        captureView!.configAudioRecording()
+        if TLStoryConfiguration.restrictMediaType != .photo {
+            captureView!.configAudioRecording()
+        }
         captureView!.startRecording()
     }
     

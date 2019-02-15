@@ -72,6 +72,9 @@ class TLStoryAuthorizationController: UIViewController {
         
         self.openCameraBtn.addTarget(self, action: #selector(openCameraAction), for: .touchUpInside)
         self.openMicBtn.addTarget(self, action: #selector(openMicAction), for: .touchUpInside)
+        
+        // 只能拍摄照片时，不用申请麦克风权限
+        openMicBtn.isHidden = TLStoryConfiguration.restrictMediaType == .photo
     }
     
     @objc fileprivate func openCameraAction() {
@@ -103,7 +106,11 @@ class TLStoryAuthorizationController: UIViewController {
     }
     
     fileprivate func dismiss() {
-        if TLAuthorizedManager.checkAuthorization(with: .camera) && TLAuthorizedManager.checkAuthorization(with: .mic) {
+        let cameraAuthorization = TLAuthorizedManager.checkAuthorization(with: .camera)
+        let micAuthorization = TLAuthorizedManager.checkAuthorization(with: .mic)
+        // 只能拍摄照片时，申请了相机的权限就行
+        let authorization = TLStoryConfiguration.restrictMediaType == .photo ? cameraAuthorization : cameraAuthorization && micAuthorization
+        if authorization {
             UIView.animate(withDuration: 0.25, animations: {
                 self.view.alpha = 0
             }, completion: { (x) in

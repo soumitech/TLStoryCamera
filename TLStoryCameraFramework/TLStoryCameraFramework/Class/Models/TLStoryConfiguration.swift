@@ -16,7 +16,7 @@ public class TLStoryConfiguration: NSObject {
     public static var maxVideoTime: TimeInterval = 30
     
     // 视频的最短时间
-    public static var minVideoTime: TimeInterval = 5
+    public static var minVideoTime: TimeInterval = 2
     
     //<此时间都是拍照
     public static var asPhotoValveTime:TimeInterval = 0.1
