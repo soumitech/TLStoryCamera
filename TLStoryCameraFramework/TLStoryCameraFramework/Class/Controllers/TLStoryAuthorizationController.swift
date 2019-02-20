@@ -70,7 +70,7 @@ class TLStoryAuthorizationController: UIViewController {
         self.view.addSubview(cancelBtn)
         cancelBtn.sizeToFit()
         cancelBtn.bounds = CGRect.init(x: 0, y: 0, width: 55, height: 55)
-        cancelBtn.center = CGPoint.init(x: self.cancelBtn.width / 2, y: cancelBtn.centerY + 20)
+        cancelBtn.center = CGPoint.init(x: self.cancelBtn.width / 2, y: cancelBtn.centerY + 40)
         cancelBtn.addTarget(self, action: #selector(cancelAuthorizationAction), for: .touchUpInside)
         
         openCameraBtn.isSelected = TLAuthorizedManager.checkAuthorization(with: .camera)
